@@ -29,36 +29,6 @@
 </head>
 
 <body>
-    <!-- 簡易認証用のオーバーレイ -->
-    <div id="lock-screen"
-        style="position:fixed; inset:0; z-index:9999; background:#0a0b10; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:sans-serif;">
-        <div
-            style="background:rgba(22,24,33,0.8); padding:2rem; border-radius:20px; border:1px solid rgba(255,126,95,0.3); text-align:center; max-width:400px; width:90%;">
-            <h2 style="color:#fff; margin-bottom:1.5rem; font-weight:300; font-size:1.5rem;">仲間内限定ページ</h2>
-            <p style="color:#a0a4b8; margin-bottom:2rem; font-size:0.9rem;">合言葉を入力してください</p>
-            <input type="password" id="password-input"
-                style="width:100%; padding:1rem; background:#161821; border:1px solid #333; border-radius:8px; color:#fff; margin-bottom:1.5rem; outline:none; text-align:center;">
-            <button onclick="checkPassword()"
-                style="width:100%; padding:1rem; background:linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%); border:none; border-radius:50px; color:#fff; font-weight:bold; cursor:pointer;">入る</button>
-            <p id="error-msg" style="color:#ff7e5f; margin-top:1rem; font-size:0.8rem; display:none;">合言葉が違います</p>
-        </div>
-    </div>
-
-    <script>
-        function checkPassword() {
-            const input = document.getElementById('password-input').value;
-            // 合言葉を 'hakusan2026' に設定
-            if (input === 'hakusan2026') {
-                document.getElementById('lock-screen').style.display = 'none';
-                sessionStorage.setItem('unlocked', 'true');
-            } else {
-                document.getElementById('error-msg').style.display = 'block';
-            }
-        }
-        if (sessionStorage.getItem('unlocked') === 'true') {
-            document.getElementById('lock-screen').style.display = 'none';
-        }
-    </script>
 
     <!-- Hero Section -->
     <section class="hero glass-nav-area">
